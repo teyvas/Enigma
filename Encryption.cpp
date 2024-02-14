@@ -140,9 +140,15 @@ std:: string Vigenere_decrypt(std:: string sentence){
 int main(){
       std:: string sentence; 
       std:: fstream my_file;
-      my_file.open ("Text_to_decrypt_ceasar.txt");
+      my_file.open ("Text_to_decrypt_2vigenere.txt");
       char d_e,ch;
       int method;
+      if (!my_file) {
+		std:: cout << "No such file";
+	}
+
+	else {
+
       while(true){
 		my_file >> ch;
 		if (my_file.eof())
@@ -150,7 +156,7 @@ int main(){
 
 		sentence+= ch;
 	}
-            
+      }      
       my_file.close();
 
       sentence = removeSpecialCharacter(sentence);
